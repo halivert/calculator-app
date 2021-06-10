@@ -95,6 +95,7 @@ main {
 	flex-direction: column;
 	padding: 0 1em;
 	width: 100%;
+	max-width: 500px;
 }
 
 .header {
@@ -219,19 +220,38 @@ main {
 #eq {
 	--number-key-background: var(--toggle-background);
 	--number-key-shadow: var(--toggle-shadow);
-	--number-key-text: var(--equal-key-text);
 }
 
 footer {
-	font-size: 16px;
+	font-size: 12px;
 	font-weight: 400;
 	position: absolute;
 	bottom: 0;
 	text-align: center;
-	padding-bottom: 0.25em;
+	padding: 0.5em;
+	width: 100%;
+	border-top: solid rgb(0, 0, 0, 0.2);
+}
+
+footer > a {
+	color: var(--screen-text);
 }
 
 html.day-theme body,
 html.purple-theme body {
 	color: var(--number-key-text);
+}
+
+html.purple-theme #eq {
+	--number-key-text: var(--equal-key-text);
+}
+
+@media all and (min-width: 600px) {
+	.keypad {
+		gap: 0.6em;
+	}
+
+	.button {
+		height: 48px;
+	}
 }
