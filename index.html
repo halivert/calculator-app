@@ -13,7 +13,7 @@
 
 		<title>Calculator app</title>
 
-		<link rel="stylesheet" href="/css/index.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="/css/index.css" />
 	</head>
 	<body>
 		<main>
@@ -23,41 +23,48 @@
 					<span>Theme</span>
 
 					<div class="selector">
-						<span class="label">1 2 3</span>
-						<input type="range" min="1" max="3" step="1" value="1" />
+						<span class="label">
+							<span>1</span>
+							<span>2</span>
+							<span>3</span>
+						</span>
+						<input id="themeSwitcher" type="range" min="1" max="3" value="1" />
 					</div>
 				</div>
 			</section>
 
 			<section class="screen">
-				<span></span>
+				<span>399,981</span>
 			</section>
 
 			<section class="keypad">
-				<button type="button" class="button 7">7</button>
-				<button type="button" class="button 8">8</button>
-				<button type="button" class="button 9">9</button>
-				<button type="button" class="button del">Del</button>
-				<button type="button" class="button 4">4</button>
-				<button type="button" class="button 5">5</button>
-				<button type="button" class="button 6">6</button>
-				<button type="button" class="button +">+</button>
-				<button type="button" class="button 1">1</button>
-				<button type="button" class="button 2">2</button>
-				<button type="button" class="button 3">3</button>
-				<button type="button" class="button -">-</button>
-				<button type="button" class="button .">.</button>
-				<button type="button" class="button 0">0</button>
-				<button type="button" class="button /">/</button>
-				<button type="button" class="button x">x</button>
-				<button type="button" class="button reset">Reset</button>
-				<button type="button" class="button =">=</button>
+				<button type="button" class="button" id="7">7</button>
+				<button type="button" class="button" id="8">8</button>
+				<button type="button" class="button" id="9">9</button>
+				<button type="button" class="button" id="del">Del</button>
+				<button type="button" class="button" id="4">4</button>
+				<button type="button" class="button" id="5">5</button>
+				<button type="button" class="button" id="6">6</button>
+				<button type="button" class="button" id="+">+</button>
+				<button type="button" class="button" id="1">1</button>
+				<button type="button" class="button" id="2">2</button>
+				<button type="button" class="button" id="3">3</button>
+				<button type="button" class="button" id="-">-</button>
+				<button type="button" class="button" id=".">.</button>
+				<button type="button" class="button" id="0">0</button>
+				<button type="button" class="button" id="/">/</button>
+				<button type="button" class="button" id="x">x</button>
+				<button type="button" class="button" id="reset">Reset</button>
+				<button type="button" class="button" id="eq">=</button>
 			</section>
 		</main>
 
 		<footer class="attribution">
 			Challenge by
-			<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+			<a
+				rel="noreferrer noopener"
+				href="https://www.frontendmentor.io?ref=challenge"
+				target="_blank"
 				>Frontend Mentor</a
 			>. Coded by
 			<a href="https://github.com/halivert/calculator-app/graphs/contributors"

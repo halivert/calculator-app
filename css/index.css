@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap");
+
+:root {
+	--radius-round: 100em;
+	--radius: 8px;
+
+	--main-background: hsl(222, 26%, 31%);
+	--keypad-background: hsl(223, 31%, 20%);
+	--screen-background: hsl(224, 36%, 15%);
+
+	--key-background: hsl(225, 21%, 49%);
+	--key-shadow: hsl(224, 28%, 35%);
+
+	--toggle-background: hsl(6, 63%, 50%);
+	--toggle-shadow: hsl(6, 70%, 34%);
+
+	--number-key-background: hsl(30, 25%, 89%);
+	--number-key-shadow: hsl(28, 16%, 65%);
+
+	--number-key-text: hsl(221, 14%, 31%);
+	--screen-text: hsl(0, 0%, 100%);
+}
+
+html.day-theme:root {
+	--main-background: hsl(0, 0%, 90%);
+	--keypad-background: hsl(0, 5%, 81%);
+	--screen-background: hsl(0, 0%, 93%);
+
+	--key-background: hsl(185, 42%, 37%);
+	--key-shadow: hsl(185, 58%, 25%);
+
+	--toggle-background: hsl(25, 98%, 40%);
+	--toggle-shadow: hsl(25, 99%, 27%);
+
+	--number-key-background: hsl(45, 7%, 89%);
+	--number-key-shadow: hsl(35, 11%, 61%);
+
+	--number-key-text: hsl(60, 10%, 19%);
+}
+
+html.purple-theme:root {
+	--main-background: hsl(268, 75%, 9%);
+	--keypad-background: hsl(268, 71%, 12%);
+	--screen-background: var(--keypad-background);
+
+	--key-background: hsl(281, 89%, 26%);
+	--key-shadow: hsl(285, 91%, 52%);
+
+	--toggle-background: hsl(176, 100%, 44%);
+	--toggle-shadow: hsl(177, 92%, 70%);
+
+	--number-key-background: hsl(268, 47%, 21%);
+	--number-key-shadow: hsl(290, 70%, 36%);
+
+	--number-key-text: hsl(52, 100%, 62%);
+	--equal-key-text: hsl(198, 20%, 13%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+	outline: none;
+}
+
+input,
+button {
+	font-size: inherit;
+	font-weight: inherit;
+	font-family: inherit;
+	outline: none;
+}
+
+html {
+	box-sizing: border-box;
+	height: 100vh;
+}
+
+body {
+	font-size: 32px;
+	font-family: "Spartan", sans-serif;
+	font-weight: 700;
+
+	background: var(--main-background);
+	color: var(--screen-text);
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	padding: 0 1em;
+	width: 100%;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.title {
+	text-transform: lowercase;
+}
+
+.theme-switcher {
+	display: flex;
+	align-items: flex-end;
+	font-size: 11px;
+	gap: 1.5em;
+}
+
+.theme-switcher > span {
+	text-transform: uppercase;
+}
+
+.selector {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	gap: 0.25em;
+}
+
+.selector > * {
+	width: 53px;
+}
+
+.selector > .label {
+	display: flex;
+	justify-content: space-around;
+	padding: 0 2px;
+}
+
+#themeSwitcher {
+	--track-padding: 4px;
+	--thumb-size: 1em;
+
+	background: var(--keypad-background);
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	padding: var(--track-padding);
+	border-radius: var(--radius-round);
+	height: calc(var(--thumb-size) + (var(--track-padding) * 2));
+}
+
+#themeSwitcher::-moz-range-thumb {
+	background: var(--toggle-background);
+	-moz-appearance: none;
+	border: none;
+	width: var(--thumb-size);
+	height: var(--thumb-size);
+	border-radius: var(--radius-round);
+}
+
+#themeSwitcher::-webkit-slider-thumb {
+	background: var(--toggle-background);
+	-webkit-appearance: none;
+	width: var(--thumb-size);
+	height: var(--thumb-size);
+	border-radius: var(--radius-round);
+}
+
+.screen > span {
+	text-align: right;
+	margin-top: 0.75em;
+	display: inline-block;
+	content: "19293";
+	width: 100%;
+	background: var(--screen-background);
+	border-radius: var(--radius);
+	padding: 0.75em;
+	min-height: 2em;
+}
+
+.keypad {
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	gap: 0.5em;
+	justify-content: space-between;
+	background: var(--keypad-background);
+	padding: 0.5em;
+	border-radius: var(--radius);
+	margin-top: 0.75em;
+}
+
+.keypad > .button {
+	flex: 1 1 20%;
+}
+
+.button {
+	font-size: 0.9em;
+	height: 63px;
+	color: var(--number-key-text);
+	background: var(--number-key-background);
+	border: none;
+	box-shadow: 0 3px var(--number-key-shadow);
+	border-radius: calc(var(--radius) / 2);
+	text-align: center;
+}
+
+#del,
+#reset,
+#eq {
+	text-transform: uppercase;
+	font-size: 0.5em;
+	--number-key-text: var(--screen-text);
+}
+
+#del,
+#reset {
+	--number-key-background: var(--key-background);
+	--number-key-shadow: var(--key-shadow);
+}
+
+#eq {
+	--number-key-background: var(--toggle-background);
+	--number-key-shadow: var(--toggle-shadow);
+	--number-key-text: var(--equal-key-text);
+}
+
+footer {
+	font-size: 16px;
+	font-weight: 400;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	padding-bottom: 0.25em;
+}
+
+html.day-theme body,
+html.purple-theme body {
+	color: var(--number-key-text);
+}
