@@ -76,7 +76,8 @@ html.purple-theme #eq {
 	padding: 0;
 	box-sizing: inherit;
 	outline: none;
-	transition: all 0.25s linear;
+	-webkit-transition: background-color 0.25s linear;
+	transition: background-color 0.25s linear;
 }
 
 input,
