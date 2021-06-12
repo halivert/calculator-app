@@ -63,6 +63,7 @@ html.purple-theme:root {
 	padding: 0;
 	box-sizing: inherit;
 	outline: none;
+	transition: all 0.25s linear;
 }
 
 input,
@@ -237,6 +238,10 @@ footer {
 
 footer > a {
 	color: var(--screen-text);
+}
+
+html.light-theme footer > a {
+	color: var(--number-key-text);
 }
 
 html.light-theme body,
