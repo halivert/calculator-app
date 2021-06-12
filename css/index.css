@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap");
 
-:root {
+html.dark-theme:root {
 	--radius-round: 100em;
 	--radius: 8px;
 
@@ -21,7 +21,7 @@
 	--screen-text: hsl(0, 0%, 100%);
 }
 
-html.day-theme:root {
+html.light-theme:root {
 	--main-background: hsl(0, 0%, 90%);
 	--keypad-background: hsl(0, 5%, 81%);
 	--screen-background: hsl(0, 0%, 93%);
@@ -93,7 +93,7 @@ body {
 main {
 	display: flex;
 	flex-direction: column;
-	padding: 0 1em;
+	padding: 0 0.75em;
 	width: 100%;
 	max-width: 500px;
 }
@@ -183,7 +183,7 @@ main {
 	gap: 0.5em;
 	justify-content: space-between;
 	background: var(--keypad-background);
-	padding: 0.5em;
+	padding: 1em;
 	border-radius: var(--radius);
 	margin-top: 0.75em;
 }
@@ -237,7 +237,7 @@ footer > a {
 	color: var(--screen-text);
 }
 
-html.day-theme body,
+html.light-theme body,
 html.purple-theme body {
 	color: var(--number-key-text);
 }
