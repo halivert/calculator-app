@@ -58,6 +58,19 @@ html.purple-theme:root {
 	--equal-key-text: hsl(198, 20%, 13%);
 }
 
+html.light-theme footer > a {
+	color: var(--number-key-text);
+}
+
+html.light-theme body,
+html.purple-theme body {
+	color: var(--number-key-text);
+}
+
+html.purple-theme #eq {
+	--number-key-text: var(--equal-key-text);
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -238,19 +251,6 @@ footer {
 
 footer > a {
 	color: var(--screen-text);
-}
-
-html.light-theme footer > a {
-	color: var(--number-key-text);
-}
-
-html.light-theme body,
-html.purple-theme body {
-	color: var(--number-key-text);
-}
-
-html.purple-theme #eq {
-	--number-key-text: var(--equal-key-text);
 }
 
 @media all and (min-width: 600px) {
