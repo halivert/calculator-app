@@ -99,13 +99,14 @@ body {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 }
 
 main {
+	flex: 1;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	padding: 0 0.75em;
 	width: 100%;
 	max-width: 500px;
@@ -240,8 +241,6 @@ main {
 footer {
 	font-size: 12px;
 	font-weight: 400;
-	position: absolute;
-	bottom: 0;
 	text-align: center;
 	padding: 0.5em;
 	width: 100%;
