@@ -58,10 +58,6 @@ html.purple-theme:root {
 	--equal-key-text: hsl(198, 20%, 13%);
 }
 
-html.light-theme footer > a {
-	color: var(--number-key-text);
-}
-
 html.light-theme body,
 html.purple-theme body {
 	color: var(--number-key-text);
@@ -218,6 +214,8 @@ main {
 	box-shadow: 0 3px var(--number-key-shadow);
 	border-radius: calc(var(--radius) / 2);
 	text-align: center;
+
+	--button-brightness: 70%;
 }
 
 #del,
@@ -248,10 +246,31 @@ footer {
 	padding: 0.5em;
 	width: 100%;
 	border-top: solid rgb(0, 0, 0, 0.2);
+	background: var(--screen-background);
 }
 
-footer > a {
-	color: var(--screen-text);
+a {
+	text-decoration: none;
+	color: var(--toggle-background);
+}
+
+a:hover,
+a:focus,
+a:focus-visible {
+	color: var(--toggle-shadow);
+}
+
+a:focus,
+a:focus-visible {
+	text-decoration: underline;
+}
+
+.button:focus-visible {
+	filter: brightness(calc(var(--button-brightness)));
+}
+
+.button:active {
+	filter: brightness(calc(var(--button-brightness) - 20%));
 }
 
 @media all and (min-width: 600px) {
