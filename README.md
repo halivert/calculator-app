@@ -32,27 +32,46 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Desktop screenshot](./images/desktop.png)
+
+![Mobile purple screenshot](./images/mobile-purple.png)
 
 ### Links
 
-<!-- - Solution URL: [Add solution URL here](https://your-solution-url.com) -->
-<!-- - Live Site URL: [Add live site URL here](https://your-live-site-url.com) -->
+- [Github](https://github.com/halivert/calculator-app)
+- [Live Site URL](https://halivert.dev/calculator-app)
 
 ## My process
+
+I like to write first the HTML, only the HTML, it looks weird but when it's
+done I have a better idea of the styles needed.
+
+Then I try to use only CSS for everything (animations, states, styles) and the
+last step is to add JS.
 
 ### Built with
 
 - Semantic HTML5 markup
 - CSS custom properties
-- Flexbox, CSS Grid
+- Flexbox
 - Mobile-first workflow
+- Vanilla JS
 
 ### What I learned
 
+1. How to group numbers.
+2. How to use media queries with JS.
+3. How to format numbers (Intl.NumberFormat).
+   (This isn't effective for this particular project.)
+
 ### Continued development
 
+- [ ] Update layout for horizontal orientation in mobile.
+- [ ] Add other mathematical functions.
+
 ### Useful resources
+
+[JS Media queries][1]
 
 ## Author
 
@@ -60,5 +79,7 @@ Users should be able to:
 - Frontend Mentor - [@halivert](https://www.frontendmentor.io/profile/halivert)
 - Twitter - [@halivert](https://www.twitter.com/halivert)
 
-## Contributors
+## [Contributors][2]
 
+[1]: https://css-tricks.com/working-with-javascript-media-queries/
+[2]: https://github.com/halivert/calculator-app/graphs/contributors
