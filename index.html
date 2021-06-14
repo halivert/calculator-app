@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<main>
-			<section class="header">
+			<header class="header">
 				<span class="title">Calc</span>
 				<div class="theme-switcher">
 					<span>Theme</span>
@@ -22,16 +22,23 @@
 							<span>2</span>
 							<span>3</span>
 						</span>
-						<input id="themeSwitcher" type="range" min="1" max="3" value="1" />
+						<input
+							aria-label="Theme switcher"
+							id="themeSwitcher"
+							type="range"
+							min="1"
+							max="3"
+							value="1"
+						/>
 					</div>
 				</div>
-			</section>
+			</header>
 
-			<section class="screen">
+			<div class="screen">
 				<span>399,981</span>
-			</section>
+			</div>
 
-			<section class="keypad">
+			<div class="keypad">
 				<button type="button" class="button" id="7">7</button>
 				<button type="button" class="button" id="8">8</button>
 				<button type="button" class="button" id="9">9</button>
@@ -50,7 +57,7 @@
 				<button type="button" class="button" id="x">x</button>
 				<button type="button" class="button" id="reset">Reset</button>
 				<button type="button" class="button" id="eq">=</button>
-			</section>
+			</div>
 		</main>
 
 		<footer class="attribution">
