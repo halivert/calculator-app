@@ -1,0 +1,10 @@
+pages:
+  script:
+    - cp -r css/ public/css
+    - cp -r js/ public/js
+    - cp index.html public/
+  artifacts:
+    paths:
+      - public/
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
