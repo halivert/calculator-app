@@ -1,5 +1,6 @@
 pages:
   script:
+    - mkdir public
     - cp -r css/ public/css
     - cp -r js/ public/js
     - cp index.html public/
