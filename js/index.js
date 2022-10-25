@@ -30,6 +30,30 @@ const addButtonsListeners = () => {
   })
 }
 
+const addKeyboardListener = () => {
+  document.addEventListener('keydown', e => {
+    e.preventDefault()
+    e.stopPropagation()
+    const { key } = e
+    const button = buttons[key]
+
+    if (button) button.click()
+
+    if (!button) {
+      if (key === 'Enter') buttons.eq.click()
+      if (key === 'Backspace') buttons.del.click()
+      if (key === 'Escape') buttons.reset.click()
+      if (key === 't') {
+        const themeSwitcher = document.querySelector('#themeSwitcher')
+        const nextValue = Number(themeSwitcher.value) + 1
+        themeSwitcher.value = nextValue > 3 ? '1' : nextValue.toString()
+        const changeEvent = new Event('change')
+        themeSwitcher.dispatchEvent(changeEvent)
+      }
+    }
+  })
+}
+
 const handleButtonClick = e => {
   const { id } = e.target
   !isNaN(id) || id === '.' ? handleNumberClick(id) : handleOperatorClick(id)
@@ -63,7 +87,9 @@ const handleOperatorClick = operator => {
 
   if (operator === 'del') {
     currentOperation.displayValue = operations.del(currentOperation.displayValue)
-    currentOperation.operator === null ? currentOperation.firstNumber = Number(currentOperation.displayValue) : currentOperation.secondNumber = Number(currentOperation.displayValue)
+    currentOperation.operator === null
+      ? currentOperation.firstNumber = Number(currentOperation.displayValue)
+      : currentOperation.secondNumber = Number(currentOperation.displayValue)
     updateScreen()
     return
   }
@@ -100,6 +126,7 @@ const updateScreen = () => {
 
 const init = () => {
   addButtonsListeners()
+  addKeyboardListener()
   updateScreen()
 }
 
