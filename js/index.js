@@ -60,7 +60,7 @@ const handleButtonClick = e => {
 }
 
 const handleNumberClick = number => {
-  const screenValue = screen.textContent
+  const screenValue = getScreenValue()
 
   if (number === '.' && currentOperation.displayValue.includes('.')) return
 
@@ -120,8 +120,13 @@ const handleOperatorClick = operator => {
   updateScreen()
 }
 
+const getScreenValue = () => {
+  return screen.textContent.replaceAll(',', '')
+}
+
 const updateScreen = () => {
-  screen.textContent = currentOperation.displayValue
+  screen.textContent = Number(currentOperation.displayValue).toLocaleString('en', { maximumFractionDigits: 10 })
+  if (currentOperation.displayValue.slice(-1) === '.') screen.textContent += '.'
 }
 
 const init = () => {
