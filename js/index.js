@@ -96,13 +96,11 @@ const handleOperatorClick = operator => {
 
 const updateScreen = () => {
   screen.textContent = currentOperation.displayValue
-  console.log(currentOperation)
 }
 
 const init = () => {
   addButtonsListeners()
   updateScreen()
-  console.log(buttons)
 }
 
 init()
