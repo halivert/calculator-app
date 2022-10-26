@@ -1,0 +1,17 @@
+{
+	"name": "calculator-app",
+	"version": "0.0.1",
+	"scripts": {
+		"lint": "eslint js/** --fix"
+	},
+	"devDependencies": {
+		"eslint": "8.24.0",
+		"eslint-config-prettier": "8.5.0",
+		"standard": "17.0.0"
+	},
+	"eslintConfig": {
+		"extends": [
+			"./node_modules/standard/eslintrc.json"
+		]
+	}
+}
