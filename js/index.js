@@ -127,8 +127,6 @@ const getScreenValue = () => {
 }
 
 const updateScreen = () => {
-  console.log(currentOperation)
-
   const newValue = Number(currentOperation.displayValue)
 
   if (isNaN(newValue)) return displayError()
