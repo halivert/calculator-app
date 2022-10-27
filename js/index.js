@@ -64,9 +64,11 @@ const handleNumberClick = number => {
 
   if (number === '.' && currentOperation.displayValue.includes('.')) return
 
-  currentOperation.displayValue = currentOperation.displayValue === '0' || (currentOperation.operator !== null && currentOperation.secondNumber === 0)
+  currentOperation.displayValue = currentOperation.operator !== null && currentOperation.secondNumber === 0 && currentOperation.displayValue !== '0.'
     ? number
     : screenValue + number
+
+  if (currentOperation.displayValue === '.') currentOperation.displayValue = '0.'
 
   if (currentOperation.operator === null) {
     currentOperation.firstNumber = Number(currentOperation.displayValue)
@@ -125,8 +127,18 @@ const getScreenValue = () => {
 }
 
 const updateScreen = () => {
+  console.log(currentOperation)
+
+  const newValue = Number(currentOperation.displayValue)
+
+  if (isNaN(newValue)) return displayError()
+
   screen.textContent = Number(currentOperation.displayValue).toLocaleString('en', { maximumFractionDigits: 10 })
   if (currentOperation.displayValue.slice(-1) === '.') screen.textContent += '.'
+}
+
+const displayError = () => {
+  screen.textContent = 'ERROR!'
 }
 
 const init = () => {
